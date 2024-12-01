@@ -9,6 +9,16 @@ defmodule HistorianHysteria do
     |> Enum.sum()
   end
 
+  def second_part(input) do
+    input_list = read_input(input)
+    list_one = order_first_column(input_list)
+    list_two = order_second_column(input_list)
+
+    list_one
+    |> Enum.map(&multi_with_list(&1, list_two))
+    |> Enum.sum()
+  end
+
   def calcule_diff(list) do
     list
     |> Enum.map(&diff/1)
@@ -37,6 +47,11 @@ defmodule HistorianHysteria do
     Regex.scan(~r/\d+/, line)
     |> Enum.map(&List.first/1)
     |> Enum.map(&String.to_integer/1)
+  end
+
+  defp multi_with_list(number, list) do
+    size = Enum.count(list, &(&1 == number))
+    number * size
   end
 
   defp diff(list) do
