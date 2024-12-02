@@ -1,11 +1,11 @@
 defmodule Main do
   def first_part() do
-    result = Template.first_part(input())
+    result = RedNosedReports.first_part(input())
     IO.puts("Result part one: #{result}")
   end
 
   def second_part() do
-    result = Template.second_part(input())
+    result = RedNosedReports.second_part(input())
     IO.puts("Result part two: #{result}")
   end
 

@@ -49,7 +49,7 @@ defmodule RedNosedReportsTest do
         1 3 6 7 9
       """
 
-      assert RedNosedReports.second_part(input) == 0
+      assert RedNosedReports.second_part(input) == 4
     end
   end
 end
